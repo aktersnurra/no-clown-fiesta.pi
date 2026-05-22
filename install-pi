@@ -1,0 +1,42 @@
+#!/usr/bin/env bash
+set -euo pipefail
+
+REPO_DIR="$(cd "$(dirname "${BASH_SOURCE[0]}")" && pwd)"
+PI="${PI_HOME:-$HOME/.pi/agent}"
+THEME_NAME="no-clown-fiesta-dark"
+THEME_SRC="$REPO_DIR/themes/$THEME_NAME.json"
+THEME_DIR="$PI/themes"
+THEME_DEST="$THEME_DIR/$THEME_NAME.json"
+SETTINGS="$PI/settings.json"
+
+mkdir -p "$THEME_DIR"
+ln -sf "$THEME_SRC" "$THEME_DEST"
+
+if command -v python3 >/dev/null 2>&1; then
+  python3 - "$SETTINGS" "$THEME_NAME" <<'PY'
+import json
+import os
+import sys
+
+settings_path, theme_name = sys.argv[1], sys.argv[2]
+settings = {}
+
+if os.path.exists(settings_path):
+    with open(settings_path, "r", encoding="utf-8") as f:
+        content = f.read().strip()
+        if content:
+            settings = json.loads(content)
+
+settings["theme"] = theme_name
+
+os.makedirs(os.path.dirname(settings_path), exist_ok=True)
+with open(settings_path, "w", encoding="utf-8") as f:
+    json.dump(settings, f, indent=2)
+    f.write("\n")
+PY
+else
+  echo "python3 is required to activate the theme in $SETTINGS" >&2
+  exit 1
+fi
+
+echo "Installed and activated Pi theme: $THEME_NAME"

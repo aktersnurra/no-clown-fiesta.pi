@@ -1,0 +1,10 @@
+{
+  "name": "no-clown-fiesta.pi",
+  "version": "0.1.0",
+  "description": "Pi theme inspired by no-clown-fiesta.nvim",
+  "pi": {
+    "themes": [
+      "themes"
+    ]
+  }
+}
