@@ -8,7 +8,7 @@
     "accent": "#202020",
     "gray": "#373737",
     "mediumGray": "#8A8A8A",
-    "dimText": "#767676",
+    "dimText": "#969696",
     "lightGray": "#AFAFAF",
     "blue": "#BAD7FF",
     "grayBlue": "#7E97AB",
@@ -42,7 +42,7 @@
     "error": "red",
     "warning": "yellow",
     "muted": "mediumGray",
-    "dim": "lightGray",
+    "dim": "dimText",
     "text": "fg",
     "thinkingText": "lightGray",
 
