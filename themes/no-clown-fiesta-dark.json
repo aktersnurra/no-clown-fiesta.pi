@@ -7,7 +7,8 @@
     "altBg": "#171717",
     "accent": "#202020",
     "gray": "#373737",
-    "mediumGray": "#727272",
+    "mediumGray": "#8A8A8A",
+    "dimText": "#767676",
     "lightGray": "#AFAFAF",
     "blue": "#BAD7FF",
     "grayBlue": "#7E97AB",
@@ -41,7 +42,7 @@
     "error": "red",
     "warning": "yellow",
     "muted": "mediumGray",
-    "dim": "gray",
+    "dim": "lightGray",
     "text": "fg",
     "thinkingText": "lightGray",
 
@@ -72,7 +73,7 @@
     "toolDiffRemoved": "red",
     "toolDiffContext": "mediumGray",
 
-    "syntaxComment": "mediumGray",
+    "syntaxComment": "lightGray",
     "syntaxKeyword": "purple",
     "syntaxFunction": "blue",
     "syntaxVariable": "fg",
