@@ -31,6 +31,7 @@ settings["theme"] = theme_name
 
 pi_vim = settings.setdefault("piVim", {})
 mode_colors = pi_vim.setdefault("modeColors", {})
+mode_colors["insert"] = "green"
 mode_colors["normal"] = "yellow"
 
 os.makedirs(os.path.dirname(settings_path), exist_ok=True)
